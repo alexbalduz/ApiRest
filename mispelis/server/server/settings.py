@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Django external apps
+    'corsheaders',
     'rest_framework',
+    'django_rest_passwordreset',  # new
     # Django custom apps
     'authentication',
 ]
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = "authentication.CustomUser"
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -117,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+#Configuracion de CORS
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
+CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
