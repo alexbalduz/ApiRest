@@ -18,9 +18,13 @@ from django.urls import path, include
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
+from films import views as film_views
 
 #Api router
 router = routers.DefaultRouter()
+router.register('films', film_views.FilmViewSet, basename='Film')
+router.register('genres', film_views.GenreViewSet,
+basename='FilmGenre')
 
 urlpatterns = [
     # Admin routes
