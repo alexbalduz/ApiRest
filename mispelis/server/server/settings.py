@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'django_rest_passwordreset',  # new
+    'django_filters',  # new
     # Django custom apps
     'authentication',
     'films',
