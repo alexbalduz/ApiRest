@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',  # new
     # Django custom apps
     'authentication',
+    'films',
 ]
 
 # Custom user model
